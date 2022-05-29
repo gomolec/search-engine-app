@@ -12,4 +12,8 @@ export class SearchEngineComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  searchQuerry() {
+    console.log("button clicked");
+  }
+
 }
