@@ -1,1 +1,13 @@
-<app-search-bar (btnClick)="searchQuerry()"></app-search-bar>
+<form>
+    <mat-form-field appearance="outline" class="search-form-field">
+        <input matInput type="text" [matAutocomplete]="auto" [formControl]="searchControl"/>
+        <button mat-icon-button matSuffix type="button" (click)="onClick()">
+            <mat-icon>search</mat-icon>
+        </button>
+        <mat-autocomplete #auto="matAutocomplete" >
+            <mat-option *ngFor="let suggestion of filteredSuggestions | async | slice : 0 : 5" [value]="suggestion">
+                {{suggestion}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+</form>
